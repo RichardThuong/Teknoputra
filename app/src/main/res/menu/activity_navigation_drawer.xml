@@ -18,14 +18,14 @@
             android:id="@+id/nav_resources"
             android:icon="@mipmap/ic_resources"
             android:title="Resources" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="Contact" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Option">
         <menu>
-            <item
-                android:id="@+id/nav_contact"
-                android:icon="@android:drawable/ic_dialog_email"
-                android:title="Contact" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
