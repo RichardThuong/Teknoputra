@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="home_category_id">25</integer>
+    <integer name="aboutUs_category_id">26</integer>
+    <integer name="whatWeDo_category_id">27</integer>
+    <integer name="resources_category_id">28</integer>
+    <integer name="contact_category_id">29</integer>
+</resources>

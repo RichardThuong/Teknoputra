@@ -22,18 +22,4 @@
         app:headerLayout="@layout/nav_header_navigation"
         app:menu="@menu/activity_navigation_drawer" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="56dp"
-        android:paddingBottom="16dp" tools:context=".MainActivity">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/postList"/>
-
-    </LinearLayout>
-
 </android.support.v4.widget.DrawerLayout>

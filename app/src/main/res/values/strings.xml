@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Teknoputra</string>
+    <string name="title_activity_navigation">Teknoputra</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="home_category">Home</string>
+    <string name="aboutUs_category">About Us</string>
+    <string name="whatWeDo_category">What we do</string>
+    <string name="resources_category">Resources</string>
+    <string name="contact_category">Contact</string>
 </resources>
