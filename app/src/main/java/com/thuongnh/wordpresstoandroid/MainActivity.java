@@ -47,28 +47,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loadPostList(25);
+        //OpenLoginActivity();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        SetMenuItemSelectedListener();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        loadPostList(getResources().getInteger(R.integer.home_category_id));
     }
 
     @Override
@@ -110,15 +93,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            loadPostList(25);
+            loadPostList(getResources().getInteger(R.integer.home_category_id));
         } else if (id == R.id.nav_aboutus) {
-            loadPostList(26);
+            loadPostList(getResources().getInteger(R.integer.aboutUs_category_id));
         } else if (id == R.id.nav_whatwedo) {
-            loadPostList(27);
+            loadPostList(getResources().getInteger(R.integer.whatWeDo_category_id));
         } else if (id == R.id.nav_resources) {
-            loadPostList(28);
+            loadPostList(getResources().getInteger(R.integer.resources_category_id));
         } else if (id == R.id.nav_contact) {
-            loadPostList(29);
+            loadPostList(getResources().getInteger(R.integer.contact_category_id));
+        } else if (id == R.id.action_logout) {
+            OpenLoginActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -166,10 +151,38 @@ public class MainActivity extends AppCompatActivity
                 mapPost = (Map<String, Object>) list.get(position);
                 postID = ((Double) mapPost.get("id")).intValue();
 
-                Intent intent = new Intent(getApplicationContext(), Post.class);
+                Intent intent = new Intent(getApplicationContext(), PostActivity.class);
                 intent.putExtra("id", "" + postID);
                 startActivity(intent);
             }
         });
+    }
+
+    private void SetMenuItemSelectedListener() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void OpenLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

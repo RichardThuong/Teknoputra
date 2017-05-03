@@ -8,15 +8,15 @@
             android:title="Home" />
         <item
             android:id="@+id/nav_aboutus"
-            android:icon="@android:drawable/ic_menu_info_details"
+            android:icon="@android:drawable/ic_dialog_info"
             android:title="About us" />
         <item
             android:id="@+id/nav_whatwedo"
-            android:icon="@android:drawable/ic_menu_help"
+            android:icon="@drawable/ic_menu_help"
             android:title="What we do" />
         <item
             android:id="@+id/nav_resources"
-            android:icon="@mipmap/ic_resources"
+            android:icon="@drawable/ic_menu_resource"
             android:title="Resources" />
         <item
             android:id="@+id/nav_contact"
@@ -24,13 +24,16 @@
             android:title="Contact" />
     </group>
 
-    <item android:title="Setting">
+    <item android:title="Options">
         <menu>
             <item
                 android:id="@+id/action_settings"
-                android:orderInCategory="100"
+                android:icon="@drawable/ic_menu_settings"
                 android:title="@string/action_settings" />
+            <item
+                android:id="@+id/action_logout"
+                android:icon="@drawable/ic_menu_logout"
+                android:title="Logout" />
         </menu>
     </item>
-
 </menu>

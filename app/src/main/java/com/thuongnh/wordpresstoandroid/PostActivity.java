@@ -16,7 +16,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import java.util.Map;
 
-public class Post extends AppCompatActivity {
+public class PostActivity extends AppCompatActivity {
     TextView title;
     WebView content;
     ProgressDialog progressDialog;
@@ -28,14 +28,14 @@ public class Post extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.post);
+        setContentView(R.layout.activity_post);
 
         final String id = getIntent().getExtras().getString("id");
 
         title = (TextView) findViewById(R.id.title);
         content = (WebView)findViewById(R.id.content);
 
-        progressDialog = new ProgressDialog(Post.this);
+        progressDialog = new ProgressDialog(PostActivity.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
@@ -59,11 +59,11 @@ public class Post extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 progressDialog.dismiss();
-                Toast.makeText(Post.this, id, Toast.LENGTH_LONG).show();
+                Toast.makeText(PostActivity.this, id, Toast.LENGTH_LONG).show();
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(Post.this);
+        RequestQueue rQueue = Volley.newRequestQueue(PostActivity.this);
         rQueue.add(request);
     }
 }
